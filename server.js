@@ -32,8 +32,21 @@ app.post('/posts', function(req,res){
      console.log(req.body);
      console.log("post is"+ req.body.comment);
      posts.push({
-         commenter: req.body.commenter,
-         comment :req.body.comment
+
+         id: req.body.id
+         , avatar: req.body.avatar
+         , username: req.body.username
+         , picture: req.body.picture
+         , caption: req.body.caption
+         , commentsNumber: req.body.commentsNumber
+         , like: req.body.like
+         , commenter: req.body.commenter
+         , comment: req.body.comment
+         , postedTime: req.body.postedTime
+         , posts: req.body.posts
+         , followers: req.body.followers
+         , following: req.body.following
+
 
      });
      res.sendStatus(200);
