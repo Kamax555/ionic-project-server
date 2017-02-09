@@ -27,7 +27,17 @@ app.get('/', function (req, res) {
 
 app.get('/posts', function(req, res) {
         res.json({data:posts});
-        })
+        });
+app.post('/posts', function(req,res){
+     console.log(req.body);
+     console.log("post is"+ req.body.comment);
+     posts.push({
+         commenter: req.body.commenter,
+         comment :req.body.comment
+
+     });
+     res.sendStatus(200);
+});
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), function () {
